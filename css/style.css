@@ -1,0 +1,196 @@
+
+/* DigiWar - Main CSS */
+
+:root {
+    --primary: #F8E8E8;
+    --secondary: #F2D6D0;
+    --accent: #B88C91;
+    --background: #FFFAF7;
+    --text: #6F5157;
+    --border: #E8C4C4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--background);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* NAVBAR */
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+nav {
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: var(--text);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 10px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--secondary);
+    color: var(--text);
+    text-shadow: 0px 0px 5px var(--accent);
+    font-weight: bold;
+}
+
+/* PAGE HEADING */
+
+h1 {
+    color: var(--text);
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+/* CLOTHES CONTAINER */
+
+.clothes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 30px;
+}
+
+/* CLOTHES CARD */
+
+.clothes-card {
+    width: 220px;
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.clothes-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(184, 140, 145, 0.2);
+}
+
+/* CLOTHING IMAGE */
+
+.clothes-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* CLOTHES DETAILS */
+
+.clothes-details {
+    padding: 15px;
+}
+
+.clothes-details h3 {
+    color: var(--text);
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.clothes-details p {
+    color: var(--accent);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: 0.3s ease;
+}
+
+.buttons button:first-child {
+    background-color: var(--primary);
+    color: var(--text);
+}
+
+.buttons button:last-child {
+    background-color: var(--secondary);
+    color: var(--text);
+}
+
+.buttons button:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 600px) {
+    .clothes-container {
+        justify-content: center;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .clothes-card {
+        width: 160px;
+    }
+
+    .clothes-card img {
+        height: 170px;
+    }
+
+    nav {
+        padding: 10px 15px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 10px 6px;
+        font-size: 9px;
+    }
+}

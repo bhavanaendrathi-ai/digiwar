@@ -1,12 +1,12 @@
 
-/* DigiWar - Main CSS */
+/* index css */
 
 :root {
     --primary: #F8E8E8;
     --secondary: #F2D6D0;
-    --accent: #B88C91;
+    --accent: #ad787e;
     --background: #FFFAF7;
-    --text: #6F5157;
+    --text: #661c2b;
     --border: #E8C4C4;
 }
 
@@ -76,121 +76,67 @@ nav a:hover {
 
 h1 {
     color: var(--text);
-    margin-bottom: 25px;
+    padding: 20px 30px;
     font-size: 32px;
+    text-align: center;
 }
 
-/* CLOTHES CONTAINER */
 
-.clothes-container {
+/* HOME PAGE CONTAINER */
+
+.hero {
+    width: 100%;
+    min-height: 80vh;
     display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
     padding: 30px;
 }
 
-/* CLOTHES CARD */
-
-.clothes-card {
-    width: 220px;
-    background-color: white;
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.3s ease;
-}
-
-.clothes-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(184, 140, 145, 0.2);
-}
-
-/* CLOTHING IMAGE */
-
-.clothes-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-
-/* CLOTHES DETAILS */
-
-.clothes-details {
-    padding: 15px;
-}
-
-.clothes-details h3 {
+.hero h1 {
+    font-size: 42px;
     color: var(--text);
-    font-size: 18px;
-    margin-bottom: 6px;
+    padding: 0;
 }
 
-.clothes-details p {
-    color: var(--accent);
-    font-size: 13px;
-    margin-bottom: 15px;
-}
 
-/* BUTTONS */
+/* HERO BUTTONS */
 
-.buttons {
+.hero .buttons {
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.buttons button {
-    flex: 1;
-    padding: 8px;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: 0.3s ease;
-}
-
-.buttons button:first-child {
+.hero .buttons a {
+    display: inline-block;
     background-color: var(--primary);
     color: var(--text);
+    padding: 12px 25px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
 }
 
-.buttons button:last-child {
-    background-color: var(--secondary);
-    color: var(--text);
-}
-
-.buttons button:hover {
+.hero .buttons a:hover {
     background-color: var(--accent);
     color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(173, 120, 126, 0.2);
 }
 
-/* RESPONSIVE DESIGN */
 
-@media (max-width: 600px) {
-    .clothes-container {
-        justify-content: center;
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .clothes-card {
-        width: 160px;
-    }
-
-    .clothes-card img {
-        height: 170px;
-    }
-
-    nav {
-        padding: 10px 15px;
-    }
-
-    nav ul {
-        gap: 5px;
-    }
-
-    nav a {
-        padding: 10px 6px;
-        font-size: 9px;
-    }
+.hero p {
+    max-width: 550px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--accent);
 }

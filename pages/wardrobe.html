@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wardrobe</title>
+
+    <link rel="stylesheet" href="../css/wardrobe.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+
+</head>
+<body>
+    <h1>My Wardrobe</h1>
+
+    <a href="../index.html" class="button">Back to Dashboard</a>
+    <a href="../pages/add_clothes.html" class="button">Add Clothes</a>
+    
+    <select id="categoryFilter" onchange="filterClothes()">
+        <option value="">All Categories</option>
+        <option value="Shirt">Shirt</option>
+        <option value="Jeans">Jeans</option>
+        <option value="Top">Top</option>
+        <option value="Dress">Dress</option>
+        <option value="Traditional Wear">Traditional Wear</option>
+    </select>
+
+    <div id="clothesContainer" class="clothes-container"></div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/wardrobe.js"></script>
+</body>
+</html>

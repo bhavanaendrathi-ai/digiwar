@@ -9,24 +9,49 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
-
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>My Wardrobe</h1>
 
-    <a href="../index.html" class="button">Back to Dashboard</a>
-    <a href="../pages/add_clothes.html" class="button">Add Clothes</a>
-    
-    <select id="categoryFilter" onchange="filterClothes()">
-        <option value="">All Categories</option>
-        <option value="Shirt">Shirt</option>
-        <option value="Jeans">Jeans</option>
-        <option value="Top">Top</option>
-        <option value="Dress">Dress</option>
-        <option value="Traditional Wear">Traditional Wear</option>
-    </select>
+    <nav>
+        <div class="logo" href="../index.html">
+            DIGIWARD
+        </div>
+        <ul>
+            <li><a href="#">DASHBOARD</a></li>
+            <li><a href="#">WARDROBE</a></li>
+            <li><a href="#">OUTFIT</a></li>
+            <li><a href="#">PLANNER</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="wardrobe-header">
+        <div class="wardrobe-title">
+            <p class="page-label">YOUR PERSONAL COLLECTION</p>
+            <h1>My Wardrobe</h1>
+        </div>
+
+        <div class="wardrobe-actions">
+            <a href="../pages/add_clothes.html" class="add-button">+ Add Clothes</a>
+        </div>
+    </div>
+
+    <div class="wardrobe-toolbar">
+        <p>Explore your collection</p>
+
+        <select id="categoryFilter" onchange="filterClothes()">
+            <option value="">All Categories</option>
+            <option value="Shirt">Shirt</option>
+            <option value="Jeans">Jeans</option>
+            <option value="Top">Top</option>
+            <option value="Dress">Dress</option>
+            <option value="Traditional Wear">Traditional Wear</option>
+        </select>
+    </div>
 
     <div id="clothesContainer" class="clothes-container"></div>
+
 
     <script src="../js/storage.js"></script>
     <script src="../js/wardrobe.js"></script>

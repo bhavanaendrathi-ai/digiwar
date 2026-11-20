@@ -1,126 +1,309 @@
-/*wardrobe css*/
+
+/* WARDROBE PAGE */
 
 :root {
-    --primary: #F8E8E8;
-    --secondary: #F2D6D0;
-    --accent: #ad787e;
-    --background: #FFFAF7;
-    --text: #661c2b;
-    --border: #E8C4C4;
+    --primary: #38251F;
+    --secondary: #765447;
+    --accent: #B99A83;
+    --background: #F4E6E3;
+    --text: #38251F;
+    --border: #E8C5C5;
+
+    --sakura: #E8C5C5;
+    --milk-tea: #B99A83;
+    --aloewood: #765447;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+}
+
+/* PAGE HEADER */
+
+.wardrobe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 55px 25px;
+}
+
+.wardrobe-title {
+    text-align: left;
+}
+
+.wardrobe-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--primary);
+    margin-top: 8px;
+}
+
+.wardrobe-header .page-label {
+    font-size: 12px;
+    color: var(--secondary);
+    letter-spacing: 2px;
+}
+
+/* HEADER BUTTONS */
+
+.wardrobe-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.wardrobe-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    padding: 13px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* ADD BUTTON */
+
+.add-button {
+    background-color: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.add-button:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* TOOLBAR */
+
+.wardrobe-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 55px 0;
+    padding: 18px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.wardrobe-toolbar p {
+    font-size: 14px;
+    color: var(--secondary);
+}
+
+.wardrobe-toolbar select {
+    padding: 10px 14px;
+    background-color: transparent;
+    border: 1px solid var(--border);
+    color: var(--primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    outline: none;
+    cursor: pointer;
 }
 
 /* CLOTHES CONTAINER */
 
 .clothes-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 35px;
+    padding: 30px 55px 60px;
 }
 
 /* CLOTHES CARD */
 
 .clothes-card {
-    width: 220px;
-    background-color: white;
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    min-width: 0;
+    transition: transform 0.3s ease;
 }
 
 .clothes-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(184, 140, 145, 0.2);
 }
 
-/* CLOTHING IMAGE */
+/* IMAGE */
 
-.clothes-card img {
+.clothes-image {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    height: 270px;
+    position: relative;
+    overflow: hidden;
+    background-color: #EADBD5;
+}
+
+.clothes-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
     display: block;
+    transition: transform 0.4s ease;
+}
+
+.clothes-card:hover .clothes-image img {
+    transform: scale(1.05);
+}
+
+/* CATEGORY TAG */
+
+.category-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--background);
+    color: var(--secondary);
+    padding: 6px 11px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* CLOTHES DETAILS */
 
 .clothes-details {
-    padding: 15px;
+    padding: 15px 2px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .clothes-details h3 {
-    color: var(--text);
-    font-size: 18px;
-    margin-bottom: 6px;
-}
-
-.clothes-details p {
-    color: var(--accent);
-    font-size: 13px;
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 500;
     margin-bottom: 15px;
+    color: var(--primary);
 }
 
-/* BUTTONS */
+/* CARD BUTTONS */
 
 .buttons {
     display: flex;
     gap: 10px;
+    margin-top: auto;
 }
 
 .buttons button {
     flex: 1;
-    padding: 8px;
-    border: none;
-    border-radius: 7px;
+    padding: 9px 12px;
     cursor: pointer;
     font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.5px;
     transition: 0.3s ease;
 }
 
-.buttons button:first-child {
+/* EDIT BUTTON */
+
+.edit-btn {
     background-color: var(--primary);
-    color: var(--text);
-}
-
-.buttons button:last-child {
-    background-color: var(--secondary);
-    color: var(--text);
-}
-
-.buttons button:hover {
-    background-color: var(--accent);
     color: white;
+    border: 1px solid var(--primary);
 }
 
-/* RESPONSIVE DESIGN */
+.edit-btn:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
 
-@media (max-width: 600px) {
+/* DELETE BUTTON */
+
+.delete-btn {
+    background-color: transparent;
+    color: var(--secondary);
+    border: 1px solid var(--border);
+}
+
+.delete-btn:hover {
+    background-color: var(--sakura);
+    border-color: var(--sakura);
+    color: var(--primary);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .wardrobe-header {
+        padding: 25px 20px;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .wardrobe-header h1 {
+        font-size: 32px;
+    }
+
+    .wardrobe-toolbar {
+        margin: 10px 20px 0;
+    }
 
     .clothes-container {
-        justify-content: center;
-        padding: 15px;
-        gap: 15px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+        padding: 20px;
     }
 
-    .clothes-card {
-        width: 160px;
+    .clothes-image {
+        height: 210px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .wardrobe-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .clothes-card img {
-        height: 170px;
+    .wardrobe-actions {
+        width: 100%;
     }
 
-    nav {
-        padding: 10px 15px;
+    .wardrobe-actions button {
+        flex: 1;
     }
 
-    nav ul {
+    .wardrobe-toolbar {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+    }
+
+    .clothes-image {
+        height: 180px;
+    }
+
+    .clothes-details h3 {
+        font-size: 16px;
+    }
+
+    .buttons {
         gap: 5px;
     }
 
-    nav a {
-        padding: 10px 6px;
-        font-size: 9px;
+    .buttons button {
+        padding: 8px 5px;
+        font-size: 11px;
     }
 }

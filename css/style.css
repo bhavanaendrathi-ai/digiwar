@@ -1,13 +1,17 @@
 
-/* index css */
+/* DIGIWARD - INDEX CSS */
 
 :root {
-    --primary: #F8E8E8;
-    --secondary: #F2D6D0;
-    --accent: #ad787e;
-    --background: #FFFAF7;
-    --text: #661c2b;
-    --border: #E8C4C4;
+    --primary: #38251F;
+    --secondary: #765447;
+    --accent: #B99A83;
+    --background: #F4E6E3;
+    --text: #38251F;
+    --border: #E8C5C5;
+
+    --sakura: #E8C5C5;
+    --milk-tea: #B99A83;
+    --aloewood: #765447;
 }
 
 * {
@@ -16,8 +20,7 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
     min-height: 100%;
     width: 100%;
     font-family: 'DM Sans', sans-serif;
@@ -34,109 +37,162 @@ h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: bold;
-    color: var(--text);
+    color: var(--sakura);
+    letter-spacing: 2px;
 }
 
 nav {
+    height: 75px;
     background-color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 0 50px;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
-    gap: 20px;
-}
-
-nav li {
-    float: left;
+    gap: 30px;
 }
 
 nav a {
     display: block;
-    color: var(--text);
+    color: var(--sakura);
     text-align: center;
-    padding: 14px 16px;
+    padding: 12px 5px;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
     transition: 0.3s ease;
 }
 
 nav a:hover {
-    background-color: var(--secondary);
-    color: var(--text);
-    text-shadow: 0px 0px 5px var(--accent);
-    font-weight: bold;
+    color: white;
+    border-bottom: 2px solid var(--accent);
 }
 
-/* PAGE HEADING */
-
-h1 {
-    color: var(--text);
-    padding: 20px 30px;
-    font-size: 32px;
-    text-align: center;
-}
-
-
-/* HOME PAGE CONTAINER */
+/* HOME PAGE HERO */
 
 .hero {
     width: 100%;
-    min-height: 80vh;
+    min-height: calc(100vh - 75px);
+    display: flex;
+    align-items: stretch;
+}
+
+/* LEFT SIDE */
+
+.hero-content {
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    padding: 30px;
+    align-items: flex-start;
+    padding: 60px;
+    text-align: left;
 }
 
-.hero h1 {
-    font-size: 42px;
+.hero-tag {
+    color: var(--secondary);
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 {
     color: var(--text);
+    font-size: 60px;
     padding: 0;
+    text-align: left;
+    margin-bottom: 25px;
 }
 
-
-/* HERO BUTTONS */
-
-.hero .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
+.hero-description {
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 420px;
+    margin-bottom: 35px;
 }
 
-.hero .buttons a {
+/* BUTTON */
+
+a.button {
     display: inline-block;
     background-color: var(--primary);
-    color: var(--text);
-    padding: 12px 25px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    color: var(--sakura);
+    padding: 14px 28px;
+    border-radius: 4px;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
     transition: 0.3s ease;
 }
 
-.hero .buttons a:hover {
-    background-color: var(--accent);
+a.button:hover {
+    background-color: var(--secondary);
     color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 12px rgba(173, 120, 126, 0.2);
 }
 
+/* RIGHT SIDE IMAGE */
 
-.hero p {
-    max-width: 550px;
-    font-size: 16px;
-    line-height: 1.8;
-    color: var(--accent);
+.hero-image {
+    width: 50%;
+    height: calc(100vh - 75px);
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+    object-position: center;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 0 15px;
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 50px 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 400px;
+        min-height: 400px;
+    }
+
+    .hero-image img {
+        height: 100%;
+    }
 }

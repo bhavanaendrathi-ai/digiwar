@@ -1,21 +1,32 @@
+
 const container = document.getElementById("clothesContainer");
 
-function displayClothes(items)
-{
+function displayClothes(items) {
     container.innerHTML = "";
 
     items.forEach(function(item) {
-
         container.innerHTML += `
             <div class="clothes-card">
-                <img src="${item.image}" alt="${item.name}">    
-                <h3>${item.name}</h3>
-                <p>${item.category}</p>
 
-                <div class="buttons">
-                    <button onclick="editClothes(${item.id})">Edit</button>
-                    <button onclick="deleteClothes(${item.id})">Delete</button>
+                <div class="clothes-image">
+                    <img src="${item.image}" alt="${item.name}">
+                    <span class="category-tag">${item.category}</span>
                 </div>
+
+                <div class="clothes-details">
+                    <h3>${item.name}</h3>
+
+                    <div class="buttons">
+                        <button class="edit-btn" onclick="editClothes(${item.id})">
+                            Edit
+                        </button>
+
+                        <button class="delete-btn" onclick="deleteClothes(${item.id})">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+
             </div>
         `;
     });
@@ -23,26 +34,27 @@ function displayClothes(items)
 
 displayClothes(clothes);
 
-//delete functionality
+// DELETE FUNCTIONALITY
 
 function deleteClothes(id) {
     const confirmDelete = confirm("Are you sure you want to delete this item?");
+
     if (confirmDelete) {
         const index = clothes.findIndex(item => item.id === id);
+
         if (index !== -1) {
             clothes.splice(index, 1);
-
             saveClothes();
-
             displayClothes(clothes);
         }
     }
 }
 
-//edit functionality
+// EDIT FUNCTIONALITY
 
 function editClothes(id) {
     const item = clothes.find(item => item.id === id);
+
     if (item) {
         const newName = prompt("Enter new name:", item.name);
         const newCategory = prompt("Enter new category:", item.category);
@@ -52,9 +64,9 @@ function editClothes(id) {
             item.name = newName;
             item.category = newCategory;
             item.image = newImage;
+
             saveClothes();
             displayClothes(clothes);
         }
     }
 }
-

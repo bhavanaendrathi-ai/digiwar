@@ -2,33 +2,38 @@
 const defaultClothes = [
     {
         id: 1,
-        name: "White Shirt",
+        name: "jersey",
         category: "Top",
-        image: "images/shirt.jpg"
+        image: "../images/jersey.jpg",
+        favorite: false
     },
     {
         id: 2,
         name: "Blue Jeans",
         category: "Bottom",
-        image: "images/jeans.jpg"
+        image: "../images/blueJeans.jpg",
+        favorite: false
     },
     {
         id: 3,
-        name: "Pink Top",
-        category: "Top",
-        image: "images/top.jpg"
+        name: "black skirt",
+        category: "bottom",
+        image: "../images/skirt.jpg",
+        favorite: false
     },
     {
         id: 4,
-        name: "Black Dress",
+        name: "Dress",
         category: "Dress",
-        image: "images/dress.jpg"
+        image: "../images/dress.jpg",
+        favorite: false
     },
     {
         id: 5,
         name: "Kurthi",
         category: "Traditional Wear",
-        image: "images/kurthi.jpg"
+        image: "../images/kurthi.jpg",
+        favorite: false
     }
 ];
 

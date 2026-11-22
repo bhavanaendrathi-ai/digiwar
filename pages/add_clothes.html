@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DigiWard | Add Clothes</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/add_clothes.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            <a href="../index.html">DIGIWARD</a>
+        </div>
+
+        <ul>
+            <li><a href="../index.html">DASHBOARD</a></li>
+            <li><a href="wardrobe.html">WARDROBE</a></li>
+            <li><a href="#">OUTFIT</a></li>
+            <li><a href="#">PLANNER</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="add-header">
+
+        <div>
+            <p class="page-label">EXPAND YOUR COLLECTION</p>
+            <h1>Add New Clothing</h1>
+            <p class="header-description">
+                Every piece deserves a place in your wardrobe.
+            </p>
+        </div>
+
+        <a href="wardrobe.html" class="back-button">
+            ← My Wardrobe
+        </a>
+
+    </div>
+
+
+    <!-- ADD CLOTHES SECTION -->
+
+    <main class="add-container">
+
+        <form id="clothesForm">
+
+            <div class="add-layout">
+
+                <!-- IMAGE UPLOAD -->
+
+                <div class="image-section">
+
+                    <h2>Clothing Image</h2>
+
+                    <p class="section-description">
+                        Upload a picture of your clothing item.
+                    </p>
+
+                    <label for="imageFile" class="upload-box">
+
+                        <img id="imagePreview" src="" alt="Clothing preview">
+
+                        <div id="uploadPlaceholder">
+
+                            <span class="upload-icon">＋</span>
+
+                            <h3>Upload Image</h3>
+
+                            <p>Click to browse your device</p>
+
+                            <small>PNG, JPG or JPEG</small>
+
+                        </div>
+
+                    </label>
+
+                    <input
+                        type="file"
+                        id="imageFile"
+                        accept="image/*"
+                        hidden
+                    >
+
+                    <div class="url-section">
+
+                        <label for="imageUrl">
+                            Or paste an image URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="imageUrl"
+                            placeholder="https://example.com/image.jpg"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLOTHING DETAILS -->
+
+                <div class="details-section">
+
+                    <h2>Clothing Details</h2>
+
+                    <p class="section-description">
+                        Tell us a little about your clothing.
+                    </p>
+
+
+                    <div class="form-group">
+
+                        <label for="itemName">
+                            Clothing Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="itemName"
+                            placeholder="e.g. White Oversized Shirt"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="itemCategory">
+                            Category *
+                        </label>
+
+                        <select id="itemCategory" required>
+
+                            <option value="">Select Category</option>
+
+                            <option value="Shirt">Shirt</option>
+
+                            <option value="Jeans">Jeans</option>
+
+                            <option value="Top">Top</option>
+
+                            <option value="Dress">Dress</option>
+
+                            <option value="Traditional Wear">Traditional Wear</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="itemDescription">
+                            Description (Optional)
+                        </label>
+
+                        <textarea
+                            id="itemDescription"
+                            rows="4"
+                            placeholder="Add some details about this clothing..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <p id="formMessage"></p>
+
+
+                    <!-- ACTION BUTTONS -->
+
+                    <div class="form-buttons">
+
+                        <button type="submit" class="save-button">
+                            Save to Wardrobe
+                        </button>
+
+                        <button type="reset" class="reset-button">
+                            Clear Form
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/add_clothes.js"></script>
+
+</body>
+
+</html>

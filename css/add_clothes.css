@@ -1,0 +1,354 @@
+
+/* =================================
+   DIGIWARD - ADD CLOTHES PAGE
+================================= */
+
+:root {
+    --primary: #38251F;
+    --secondary: #765447;
+    --accent: #B99A83;
+    --background: #F4E6E3;
+    --text: #38251F;
+    --border: #E8C5C5;
+    --sakura: #E8C5C5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+}
+
+/* NAVBAR */
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER */
+
+.add-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 55px 25px;
+}
+
+.page-label {
+    font-size: 14px;
+    color: var(--secondary);
+    letter-spacing: 2px;
+}
+
+.add-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    font-weight: 500;
+    color: var(--primary);
+    margin-top: 8px;
+}
+
+.header-description {
+    color: var(--secondary);
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* BACK BUTTON */
+
+.back-button {
+    text-decoration: none;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: var(--sakura);
+}
+
+/* MAIN CONTAINER */
+
+.add-container {
+    margin: 15px 55px 60px;
+    padding: 35px;
+    background-color: #FFFAF7;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+/* LAYOUT */
+
+.add-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+}
+
+/* SECTION HEADINGS */
+
+.image-section h2,
+.details-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.section-description {
+    font-size: 13px;
+    color: var(--secondary);
+    margin-bottom: 25px;
+}
+
+/* IMAGE UPLOAD */
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 350px;
+
+    background-color: #F4E6E3;
+    border: 2px dashed var(--accent);
+    border-radius: 8px;
+
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.upload-box:hover {
+    background-color: #F0DCD7;
+    border-color: var(--secondary);
+}
+
+.upload-icon {
+    font-size: 45px;
+    color: var(--secondary);
+}
+
+#uploadPlaceholder {
+    text-align: center;
+}
+
+#uploadPlaceholder h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    color: var(--primary);
+    margin: 10px 0;
+}
+
+#uploadPlaceholder p {
+    color: var(--secondary);
+    font-size: 13px;
+}
+
+#uploadPlaceholder small {
+    display: block;
+    margin-top: 10px;
+    color: var(--accent);
+    font-size: 11px;
+}
+
+#imagePreview {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+}
+
+/* IMAGE URL */
+
+.url-section {
+    margin-top: 25px;
+}
+
+.url-section label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.url-section input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    background-color: transparent;
+    outline: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+}
+
+.url-section input:focus {
+    border-color: var(--secondary);
+}
+
+/* FORM FIELDS */
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+
+    background-color: transparent;
+    border: 1px solid var(--border);
+
+    outline: none;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--primary);
+
+    border-radius: 4px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* FORM BUTTONS */
+
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.form-buttons button {
+    flex: 1;
+    padding: 14px 15px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* SAVE BUTTON */
+
+.save-button {
+    background-color: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.save-button:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+/* RESET BUTTON */
+
+.reset-button {
+    background-color: transparent;
+    color: var(--secondary);
+    border: 1px solid var(--border);
+}
+
+.reset-button:hover {
+    background-color: var(--sakura);
+    color: var(--primary);
+}
+
+/* FORM MESSAGE */
+
+#formMessage {
+    font-size: 13px;
+    margin-top: 15px;
+    min-height: 18px;
+    color: var(--secondary);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    body {
+        zoom: 1;
+    }
+
+    .add-header {
+        padding: 25px 20px;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .add-header h1 {
+        font-size: 32px;
+    }
+
+    .add-container {
+        margin: 10px 20px 40px;
+        padding: 25px;
+    }
+
+    .add-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .upload-box {
+        height: 280px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .add-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .back-button {
+        align-self: flex-start;
+    }
+
+    .add-container {
+        margin: 10px 12px 30px;
+        padding: 18px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+}

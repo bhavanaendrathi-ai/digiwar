@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DigiWard | Favorites</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/wardrobe.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            DIGIWARD
+        </div>
+
+        <ul>
+            <li><a href="../index.html">DASHBOARD</a></li>
+            <li><a href="wardrobe.html">WARDROBE</a></li>
+            <li><a href="#">OUTFIT</a></li>
+            <li><a href="#">PLANNER</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <div class="wardrobe-header">
+
+        <div class="wardrobe-title">
+
+            <p class="page-label">YOUR LOVED PIECES</p>
+
+            <h1>My Favorites</h1>
+
+        </div>
+
+        <div class="wardrobe-actions">
+
+            <a href="wardrobe.html" class="add-button">
+                ← My Wardrobe
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOOLBAR -->
+
+    <div class="wardrobe-toolbar">
+
+        <p>Your favorite collection</p>
+
+        <span id="favoriteCount">0 Favorites</span>
+
+    </div>
+
+
+    <!-- FAVORITE ITEMS -->
+
+    <div id="clothesContainer" class="clothes-container"></div>
+
+
+    <!-- MODAL -->
+
+    <div id="clothModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <img id="modalImage" src="" alt="Clothing item">
+
+            <h2 id="modalName"></h2>
+
+            <p id="modalCategory"></p>
+
+            <button id="favorites-Button" onclick="toggleFavorite()">
+                ♥ Remove from Favorites
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/favorites.js"></script>
+
+</body>
+
+</html>

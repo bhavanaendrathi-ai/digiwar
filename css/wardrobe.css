@@ -134,12 +134,15 @@ body {
 }
 
 .wardrobe-toolbar select {
-    padding: 10px 14px;
+    width: 220px;
+    height: 55px;
+    padding: 10px 16px;
     background-color: transparent;
     border: 1px solid var(--border);
+    border-radius: 5px;
     color: var(--primary);
     font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     outline: none;
     cursor: pointer;
 }
@@ -201,7 +204,7 @@ body {
     background-color: var(--background);
     color: var(--secondary);
     padding: 6px 11px;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }

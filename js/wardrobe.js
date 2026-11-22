@@ -1,13 +1,30 @@
 
 const container = document.getElementById("clothesContainer");
 
+
+// DISPLAY CLOTHES
+
 function displayClothes(items) {
 
     container.innerHTML = "";
 
+    if (items.length === 0) {
+
+        container.innerHTML = `
+            <div class="empty-favorites">
+                <h2>♡</h2>
+                <h3>Your wardrobe is waiting!</h3>
+                <p>Add some clothes to your collection.</p>
+            </div>
+        `;
+
+        return;
+    }
+
     items.forEach(function(item) {
 
         container.innerHTML += `
+
             <div class="clothes-card" onclick="openModal(${item.id})">
 
                 <div class="clothes-image">
@@ -41,16 +58,15 @@ function displayClothes(items) {
                 </div>
 
             </div>
+
         `;
 
     });
 
 }
 
-displayClothes(clothes);
 
-
-// DELETE FUNCTIONALITY
+// DELETE CLOTHES
 
 function deleteClothes(id) {
 
@@ -66,7 +82,11 @@ function deleteClothes(id) {
 
             saveClothes();
 
-            displayClothes(clothes);
+            displayClothes(getFilteredClothes());
+
+            updateFavoriteCount();
+
+            closeModal();
 
         }
 
@@ -75,7 +95,7 @@ function deleteClothes(id) {
 }
 
 
-// EDIT FUNCTIONALITY
+// EDIT CLOTHES
 
 function editClothes(id) {
 
@@ -85,48 +105,53 @@ function editClothes(id) {
 
         const newName = prompt("Enter new name:", item.name);
 
+        if (newName === null || newName.trim() === "") return;
+
         const newCategory = prompt("Enter new category:", item.category);
+
+        if (newCategory === null || newCategory.trim() === "") return;
 
         const newImage = prompt("Enter new image URL:", item.image);
 
-        if (newName && newCategory && newImage) {
+        if (newImage === null || newImage.trim() === "") return;
 
-            item.name = newName;
-            item.category = newCategory;
-            item.image = newImage;
+        item.name = newName.trim();
 
-            saveClothes();
+        item.category = newCategory.trim();
 
-            displayClothes(clothes);
+        item.image = newImage.trim();
 
-        }
+        saveClothes();
+
+        displayClothes(getFilteredClothes());
 
     }
 
 }
 
 
-// FILTER FUNCTIONALITY
+// FILTER CLOTHES
 
-function filterClothes() {
+function getFilteredClothes() {
 
     const category = document.getElementById("categoryFilter").value;
 
     if (category === "") {
-
-        displayClothes(clothes);
-
-    } else {
-
-        const filteredClothes = clothes.filter(function(item) {
-
-            return item.category.toLowerCase() === category.toLowerCase();
-
-        });
-
-        displayClothes(filteredClothes);
-
+        return clothes;
     }
+
+    return clothes.filter(function(item) {
+
+        return item.category.toLowerCase() === category.toLowerCase();
+
+    });
+
+}
+
+
+function filterClothes() {
+
+    displayClothes(getFilteredClothes());
 
 }
 
@@ -134,6 +159,7 @@ function filterClothes() {
 // CLOTHING DETAILS MODAL
 
 let selectedCloth = null;
+
 
 function openModal(id) {
 
@@ -162,23 +188,29 @@ function closeModal() {
 
 }
 
-// FAVOURITE COUNT
+
+// FAVORITE COUNT
+
 function updateFavoriteCount() {
 
     const count = clothes.filter(function(item) {
+
         return item.favorite === true;
+
     }).length;
 
     const counter = document.getElementById("favoriteCount");
 
     if (counter) {
+
         counter.textContent = count;
+
     }
 
 }
 
 
-// FAVORITE FUNCTIONALITY
+// TOGGLE FAVORITES
 
 function toggleFavorite() {
 
@@ -190,12 +222,18 @@ function toggleFavorite() {
 
     updateFavoriteButton();
 
+    updateFavoriteCount();
+
 }
 
 
+// UPDATE FAVORITE BUTTON
+
 function updateFavoriteButton() {
 
-    const button = document.getElementById("favoriteBtn");
+    const button = document.getElementById("favorites-Button");
+
+    if (!button || !selectedCloth) return;
 
     button.textContent = selectedCloth.favorite
         ? "♥ Remove from Favorites"
@@ -229,6 +267,9 @@ document.addEventListener("keydown", function(event) {
 
 });
 
-saveClothes();
-updateFavoriteButton();
+
+// INITIAL DISPLAY
+
+displayClothes(clothes);
+
 updateFavoriteCount();

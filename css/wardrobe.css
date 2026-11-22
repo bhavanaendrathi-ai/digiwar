@@ -1,6 +1,4 @@
 
-/* WARDROBE PAGE */
-
 :root {
     --primary: #38251F;
     --secondary: #765447;
@@ -24,6 +22,7 @@ body {
     background-color: var(--background);
     font-family: 'DM Sans', sans-serif;
     color: var(--text);
+    zoom: 1.2;
 }
 
 /* NAVBAR LOGO */
@@ -48,14 +47,14 @@ body {
 
 .wardrobe-header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 38px;
+    font-size: 50px;
     font-weight: 500;
     color: var(--primary);
     margin-top: 8px;
 }
 
 .wardrobe-header .page-label {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--secondary);
     letter-spacing: 2px;
 }
@@ -74,7 +73,7 @@ body {
     justify-content: center;
     min-width: 120px;
     padding: 13px 22px;
-    border-radius: 4px;
+    border-radius: 5px;
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     font-size: 13px;
@@ -97,6 +96,26 @@ body {
     transform: translateY(-2px);
 }
 
+/* HEADER FAVORITES BUTTON */
+
+.wardrobe-actions .favoritebtn {
+    background-color: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+    gap: 8px;
+}
+
+.wardrobe-actions .favoritebtn:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+#favoriteCount {
+    color: white;
+    font-weight: 600;
+}
+
 /* TOOLBAR */
 
 .wardrobe-toolbar {
@@ -110,7 +129,7 @@ body {
 }
 
 .wardrobe-toolbar p {
-    font-size: 14px;
+    font-size: 20px;
     color: var(--secondary);
 }
 
@@ -131,7 +150,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 35px;
-    padding: 30px 55px 60px;
+    padding: 30px 70px 60px;
 }
 
 /* CLOTHES CARD */
@@ -249,7 +268,7 @@ body {
     color: var(--primary);
 }
 
-/* CLOTHING DETAILS MODAL */
+/* MODAL */
 
 .modal {
     display: none;
@@ -301,25 +320,32 @@ body {
     color: var(--primary);
 }
 
-/* FAVORITE BUTTON */
+/* MODAL FAVORITES BUTTON */
 
-#favoriteBtn {
-    background: var(--primary);
-    color: white;
-    border: none;
+#favorites-Button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     padding: 12px 20px;
+    background-color: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
     border-radius: 5px;
     cursor: pointer;
     font-family: 'DM Sans', sans-serif;
-    transition: 0.3s ease;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-#favoriteBtn:hover {
-    background: var(--secondary);
+#favorites-Button:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    transform: translateY(-2px);
 }
 
-
-/* EMPTY FAVOURITES */
+/* EMPTY FAVORITES */
 
 .empty-favorites {
     grid-column: 1 / -1;
@@ -340,44 +366,13 @@ body {
     margin-bottom: 10px;
 }
 
-
-/* FAVOURITES BUTTON */
-
-.favorite-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 13px 18px;
-    text-decoration: none;
-    color: var(--primary);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 13px;
-    font-weight: 600;
-    transition: 0.3s ease;
-}
-
-.favorite-link:hover {
-    background-color: var(--sakura);
-    transform: translateY(-2px);
-}
-
-#favoriteCount {
-    background-color: var(--primary);
-    color: white;
-    min-width: 21px;
-    height: 21px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 11px;
-}
-
-
 /* MOBILE RESPONSIVE */
 
 @media (max-width: 768px) {
+
+    body {
+        zoom: 1;
+    }
 
     .wardrobe-header {
         padding: 25px 20px;
@@ -402,7 +397,6 @@ body {
     .clothes-image {
         height: 210px;
     }
-
 }
 
 @media (max-width: 480px) {
@@ -414,6 +408,12 @@ body {
 
     .wardrobe-actions {
         width: 100%;
+    }
+
+    .wardrobe-actions a {
+        flex: 1;
+        min-width: 0;
+        padding: 12px 8px;
     }
 
     .wardrobe-toolbar {
@@ -442,5 +442,4 @@ body {
     .modal-content img {
         height: 280px;
     }
-
 }

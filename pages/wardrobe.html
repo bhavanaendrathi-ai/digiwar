@@ -1,81 +1,124 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wardrobe</title>
 
-    <link rel="stylesheet" href="../css/wardrobe.css">
+    <title>DigiWard | My Wardrobe</title>
+
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/wardrobe.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+    <!-- NAVBAR -->
+
     <nav>
+
         <div class="logo">
             DIGIWARD
         </div>
+
         <ul>
             <li><a href="../index.html">DASHBOARD</a></li>
             <li><a href="wardrobe.html">WARDROBE</a></li>
             <li><a href="#">OUTFIT</a></li>
             <li><a href="#">PLANNER</a></li>
         </ul>
+
     </nav>
 
 
+    <!-- PAGE HEADER -->
+
     <div class="wardrobe-header">
+
         <div class="wardrobe-title">
+
             <p class="page-label">YOUR PERSONAL COLLECTION</p>
+
             <h1>My Wardrobe</h1>
+
         </div>
 
+
         <div class="wardrobe-actions">
-            <a href="../pages/add_clothes.html" class="add-button">+ Add Clothes</a>
-            <a href="../pages/favorites.html" class="favorites-button">
+
+            <a href="../pages/add_clothes.html" class="add-button">
+                + Add Clothes
+            </a>
+
+            <a href="../pages/favorites.html" class="favoritebtn">
                 ♡ Favorites
                 <span id="favoriteCount">0</span>
             </a>
+
         </div>
+
     </div>
 
+
+    <!-- TOOLBAR -->
+
     <div class="wardrobe-toolbar">
+
         <p>Explore your collection</p>
 
         <select id="categoryFilter" onchange="filterClothes()">
+
             <option value="">All Categories</option>
             <option value="Shirt">Shirt</option>
             <option value="Jeans">Jeans</option>
             <option value="Top">Top</option>
             <option value="Dress">Dress</option>
             <option value="Traditional Wear">Traditional Wear</option>
+
         </select>
+
     </div>
+
+
+    <!-- CLOTHES CONTAINER -->
 
     <div id="clothesContainer" class="clothes-container"></div>
 
+
+    <!-- CLOTHING DETAILS MODAL -->
+
     <div id="clothModal" class="modal">
-    <div class="modal-content">
 
-        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
 
-        <img id="modalImage" src="" alt="">
+            <span class="close" onclick="closeModal()">&times;</span>
 
-        <h2 id="modalName"></h2>
+            <img id="modalImage" src="" alt="Clothing item">
 
-        <p id="modalCategory"></p>
+            <h2 id="modalName"></h2>
 
-        <button id="favoriteBtn" onclick="toggleFavorite()">
-            ♡ Add to Favorites
-        </button>
+            <p id="modalCategory"></p>
+
+            <button id="favorites-Button" onclick="toggleFavorite()">
+                ♡ Add to Favorites
+            </button>
+
+        </div>
 
     </div>
-</div>
 
+
+    <!-- JAVASCRIPT -->
 
     <script src="../js/storage.js"></script>
     <script src="../js/wardrobe.js"></script>
+
 </body>
+
 </html>

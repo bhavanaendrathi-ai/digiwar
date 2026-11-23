@@ -17,7 +17,7 @@ const defaultClothes = [
     {
         id: 3,
         name: "black skirt",
-        category: "bottom",
+        category: "Bottom",
         image: "../images/skirt.jpg",
         favorite: false
     },

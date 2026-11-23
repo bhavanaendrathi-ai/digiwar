@@ -1,0 +1,65 @@
+
+:root {
+    --primary: #38251F;
+    --secondary: #765447;
+    --accent: #B99A83;
+    --background: #F4E6E3;
+    --text: #38251F;
+    --border: #E8C5C5;
+    --sakura: #E8C5C5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+}
+
+.outfit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 55px 25px;
+    gap: 20px;
+}
+
+.outfit-title p {
+    font-size: 16px;
+    color: var(--secondary);
+    letter-spacing: 2px;
+}
+
+.outfit-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 500;
+    color: var(--primary);
+    margin-top: 8px;
+}
+
+/* BACK BUTTON */
+
+.back-button {
+    text-decoration: none;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.back-button:hover {
+    background-color: var(--sakura);
+}
+
+
+

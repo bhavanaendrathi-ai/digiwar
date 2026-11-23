@@ -20,14 +20,6 @@ body {
     font-family: 'DM Sans', sans-serif;
     color: var(--text);
 }
-
-/* NAVBAR */
-
-.logo a {
-    text-decoration: none;
-    color: inherit;
-}
-
 /* HEADER */
 
 .add-header {

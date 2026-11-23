@@ -1,8 +1,4 @@
 
-/* =================================
-   DIGIWARD - ADD CLOTHES PAGE
-================================= */
-
 :root {
     --primary: #38251F;
     --secondary: #765447;
@@ -39,17 +35,18 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 35px 55px 25px;
+    gap: 20px;
 }
 
 .page-label {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--secondary);
     letter-spacing: 2px;
 }
 
 .add-header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 45px;
+    font-size: 46px;
     font-weight: 500;
     color: var(--primary);
     margin-top: 8px;
@@ -57,7 +54,7 @@ body {
 
 .header-description {
     color: var(--secondary);
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 10px;
 }
 
@@ -67,10 +64,12 @@ body {
     text-decoration: none;
     color: var(--primary);
     border: 1px solid var(--border);
+    border-radius: 6px;
     padding: 12px 20px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     transition: 0.3s ease;
+    white-space: nowrap;
 }
 
 .back-button:hover {
@@ -80,11 +79,13 @@ body {
 /* MAIN CONTAINER */
 
 .add-container {
-    margin: 15px 55px 60px;
-    padding: 35px;
+    max-width: 1250px;
+    width: calc(100% - 80px);
+    margin: 10px auto 60px;
+    padding: 40px;
     background-color: #FFFAF7;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 14px;
 }
 
 /* LAYOUT */
@@ -92,7 +93,7 @@ body {
 .add-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 45px;
+    gap: 40px;
 }
 
 /* SECTION HEADINGS */
@@ -100,14 +101,14 @@ body {
 .image-section h2,
 .details-section h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 25px;
+    font-size: 32px;
     font-weight: 500;
     color: var(--primary);
     margin-bottom: 8px;
 }
 
 .section-description {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--secondary);
     margin-bottom: 25px;
 }
@@ -119,14 +120,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 350px;
-
     background-color: #F4E6E3;
     border: 2px dashed var(--accent);
-    border-radius: 8px;
-
+    border-radius: 10px;
     cursor: pointer;
     overflow: hidden;
     transition: 0.3s ease;
@@ -148,21 +146,21 @@ body {
 
 #uploadPlaceholder h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 21px;
+    font-size: 24px;
     color: var(--primary);
     margin: 10px 0;
 }
 
 #uploadPlaceholder p {
     color: var(--secondary);
-    font-size: 13px;
+    font-size: 15px;
 }
 
 #uploadPlaceholder small {
     display: block;
     margin-top: 10px;
     color: var(--accent);
-    font-size: 11px;
+    font-size: 13px;
 }
 
 #imagePreview {
@@ -170,7 +168,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 15px;
+    padding: 12px;
 }
 
 /* IMAGE URL */
@@ -181,7 +179,7 @@ body {
 
 .url-section label {
     display: block;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -190,10 +188,11 @@ body {
     width: 100%;
     padding: 13px;
     border: 1px solid var(--border);
+    border-radius: 6px;
     background-color: transparent;
     outline: none;
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .url-section input:focus {
@@ -208,7 +207,7 @@ body {
 
 .form-group label {
     display: block;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--primary);
     margin-bottom: 10px;
@@ -219,17 +218,13 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 13px 15px;
-
-    background-color: transparent;
+    background-color: #FFFAF7;
     border: 1px solid var(--border);
-
     outline: none;
-
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--primary);
-
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .form-group input:focus,
@@ -247,17 +242,16 @@ body {
 .form-buttons {
     display: flex;
     gap: 12px;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .form-buttons button {
     flex: 1;
     padding: 14px 15px;
-
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-
+    border-radius: 6px;
     cursor: pointer;
     transition: 0.3s ease;
 }
@@ -291,32 +285,17 @@ body {
 /* FORM MESSAGE */
 
 #formMessage {
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 15px;
     min-height: 18px;
     color: var(--secondary);
 }
 
-/* MOBILE RESPONSIVE */
+/* TABLET RESPONSIVE */
 
-@media (max-width: 768px) {
-
-    body {
-        zoom: 1;
-    }
-
-    .add-header {
-        padding: 25px 20px;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .add-header h1 {
-        font-size: 32px;
-    }
-
+@media (max-width: 900px) {
     .add-container {
-        margin: 10px 20px 40px;
+        width: calc(100% - 40px);
         padding: 25px;
     }
 
@@ -324,15 +303,31 @@ body {
         grid-template-columns: 1fr;
         gap: 35px;
     }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+    .add-header {
+        padding: 25px 20px;
+        flex-wrap: wrap;
+    }
+
+    .add-header h1 {
+        font-size: 34px;
+    }
+
+    .add-container {
+        margin: 10px auto 40px;
+        padding: 20px;
+    }
 
     .upload-box {
         height: 280px;
     }
-
 }
 
 @media (max-width: 480px) {
-
     .add-header {
         flex-direction: column;
         align-items: flex-start;
@@ -343,12 +338,16 @@ body {
     }
 
     .add-container {
-        margin: 10px 12px 30px;
-        padding: 18px;
+        width: calc(100% - 24px);
+        padding: 15px;
     }
 
     .form-buttons {
         flex-direction: column;
     }
 
+    .image-section h2,
+    .details-section h2 {
+        font-size: 27px;
+    }
 }
